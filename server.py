@@ -45,18 +45,19 @@ def add():
         db.session.rollback()
 
 # Define a route to update the 'complete' status of a 'todo' item
-@app.route("/update/<int:todo_id>")
+@app.route("/update/<int:todo_id>", methods=["POST"])
 def update(todo_id):
     try:
-        # Retrieve the 'todo' item with the given ID and toggle its 'complete' status
+        # Retrieve the 'todo' item with the given ID and update its 'complete' status
         todo = Todo.query.filter_by(id=todo_id).first()
-        todo.complete = not todo.complete
+        todo.complete = request.form.get("complete") == "true"
         # Commit the transaction and redirect to the root page
         db.session.commit()
         return redirect(url_for("index"))
     except:
         # Roll back the transaction if an error occurred
         db.session.rollback()
+
 
 # Define a route to delete a 'todo' item
 @app.route("/delete/<int:todo_id>")

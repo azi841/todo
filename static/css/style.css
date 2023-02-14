@@ -1,0 +1,239 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  input[type="text"] {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    margin-bottom: 1.5rem;
+  }
+  
+  button {
+    padding: 1rem;
+    background-color: #1ABC9C;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #148F77;
+  }
+  
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .todo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.16);
+  }
+  
+  .todo-item p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .todo-item span {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .todo-item a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .todo-item a.update {
+    background-color: #2E86C1;
+  }
+  
+  .todo-item a.delete {
+    background-color: #C0392B;
+  }
+  
+  .todo-item a.delete:hover {
+    background-color: #96281B;
+  }
+  
+  .todo-item a.delete-all {
+    background-color: #7F8C8D;
+  }
+  
+  .todo-item a.delete-all:hover {
+    background-color: #626F70;
+  }
+  
+  @media screen and (max-width: 600px) {
+    form {
+      margin: 2rem 1rem;
+    }
+    
+    .todo-list {
+      margin: 0 1rem;
+    }
+  }
+
+  /* Style for the todo list */
+.todo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style for each todo item */
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  /* Style for the todo title */
+  .todo-title {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  /* Style for the todo status */
+  .todo-status {
+    font-weight: bold;
+  }
+  
+  /* Style for the update, delete, and delete all buttons */
+  .todo-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .todo-button:hover {
+    background-color: #3e8e41;
+  }
+  
+
+  .checkbox-container {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .checkbox-label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 2px;
+  }
+  
+  .checkbox-label input:checked ~ .checkmark {
+    background-color: #2185d0;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkbox-label .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .todo-button {
+    display: inline-block;
+    border: none;
+    background-color: #eee;
+    color: #333;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
