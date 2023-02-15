@@ -19,20 +19,23 @@
         {% for todo in todo_list %}
         <li class="todo-item">
             <form action="/update/{{ todo.id }}" method="post">
-                <div class="checkbox-container">
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="complete" value="true" {{ 'checked' if todo.complete else '' }} onchange="this.form.submit();">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
+               
                 <span class="todo-title">{{ todo.title }}</span>
                 <div class="button-container">
                     <a href="/delete/{{ todo.id }}" class="todo-button">Delete</a>
-                    <a href="/deletealltodos" method="post" class="todo-button">Delete all</a>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="complete" value="true" {{ 'checked' if todo.complete else '' }} onchange="this.form.submit();">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
                 </div>
             </form>
         </li>
         {% endfor %}
+        {% if todo_list %}
+        <a href="/deletealltodos" method="post" class="todo-button">Delete all</a>
+        {% endif %}
     </ul>
     
     

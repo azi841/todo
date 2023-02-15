@@ -197,7 +197,7 @@ body {
     left: 0;
     height: 16px;
     width: 16px;
-    background-color: #eee;
+    background-color: #2185d0;
     border-radius: 2px;
   }
   
@@ -225,15 +225,4 @@ body {
     transform: rotate(45deg);
   }
 
-  .todo-button {
-    display: inline-block;
-    border: none;
-    background-color: #eee;
-    color: #333;
-    padding: 8px 12px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
+  
