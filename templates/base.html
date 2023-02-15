@@ -5,8 +5,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <!-- Heading -->
     <h1>Todo App</h1>
 
+    <!-- Form to add new todo item -->
     <form action="/add" method="post">
         <div>
             <label for="title">Todo title</label>
@@ -15,14 +17,17 @@
         </div>
     </form>
 
+    <!-- List of todo items -->
     <ul class="todo-list">
         {% for todo in todo_list %}
         <li class="todo-item">
+            <!-- Form to update todo item status -->
             <form action="/update/{{ todo.id }}" method="post">
-               
                 <span class="todo-title">{{ todo.title }}</span>
                 <div class="button-container">
+                    <!-- Delete button -->
                     <a href="/delete/{{ todo.id }}" class="todo-button">Delete</a>
+                    <!-- Checkbox to mark item as completed -->
                     <div class="checkbox-container">
                         <label class="checkbox-label">
                             <input type="checkbox" name="complete" value="true" {{ 'checked' if todo.complete else '' }} onchange="this.form.submit();">
@@ -33,12 +38,11 @@
             </form>
         </li>
         {% endfor %}
+
+        <!-- Delete all button - only visible if there are todo items -->
         {% if todo_list %}
         <a href="/deletealltodos" method="post" class="todo-button">Delete all</a>
         {% endif %}
     </ul>
-    
-    
-
 </body>
 </html>
