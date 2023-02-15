@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import *
@@ -88,4 +89,4 @@ def deleteall():
 
 # Start the Flask application
 if (__name__ == '__main__'):
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
